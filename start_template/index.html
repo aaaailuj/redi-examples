@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Option Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <header class="site--bar">
+      <nav class="navbar">
+        <div class="navbar--logo">
+          <a href="./index.html">R-Commerce</a>
+        </div>
+        <ul class="navbar--menu">
+          <li class="navbar--search-cart">
+            <input type="text" placeholder="Search..." class="navbar--search" />
+          </li>
+          <li id="cartLink"><a href="#shop">Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="root">
+      <section class="site--hero">
+        <div class="hero--content">
+          <h1>Ready to Shop</h1>
+          <p>Discover the latest trends and find your perfect look.</p>
+          <a href="#products">
+            <button class="hero--button">Start Shopping</button>
+          </a>
+        </div>
+      </section>
+      <section class="products">
+        <h3 class="products--title" id="products">All the products</h3>
+        <div class="products--sorting">
+          <label for="sort">Sort by price:</label>
+          <select id="sort" class="sort--dropdown">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
+        <ul class="products--list" id="product-container">
+        </ul>
+      </section>
+    </main>
+
+    <div id="modalCart" class="modal-cart">
+      <div class="modal-cart-content">
+        <span class="modal-cart-close">&times;</span>
+        <h1>Cart</h1>
+        <p>...</p>
+      </div>
+    </div>
+
+    <footer class="more">
+      <section>
+        <div class="more--credits">
+          <a href="./index.html" target="_blank">R-Commerce</a>
+          <p class="more--rights">(c) 2024</p>
+        </div>
+      </section>
+    </footer>
+    <!-- Example JS code (open cart modal) -->
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("modalCart");
+        const cartLink = document.getElementById("cartLink");
+        const closeBtn = document.getElementsByClassName("modal-cart-close")[0];
+
+        cartLink.onclick = function () {
+          modal.style.display = "block";
+          setTimeout(() => {
+            modal.classList.add("show");
+          }, 10);
+        };
+
+        closeBtn.onclick = function () {
+          modal.classList.remove("show");
+          setTimeout(() => {
+            modal.style.display = "none";
+          }, 300);
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.classList.remove("show");
+            setTimeout(() => {
+              modal.style.display = "none";
+            }, 300);
+          }
+        };
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("modalCart");
+        const cartLink = document.getElementById("cartLink");
+        const closeBtn = document.getElementsByClassName("modal-cart-close")[0];
+        const searchInput = document.querySelector(".navbar--search");
+        const productList = document.querySelector(".products--list");
+        const products = Array.from(productList.children);
+
+        cartLink.onclick = function () {
+          modal.style.display = "block";
+          setTimeout(() => {
+            modal.classList.add("show");
+          }, 10);
+        };
+
+        closeBtn.onclick = function () {
+          modal.classList.remove("show");
+          setTimeout(() => {
+            modal.style.display = "none";
+          }, 300);
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.classList.remove("show");
+            setTimeout(() => {
+              modal.style.display = "none";
+            }, 300);
+          }
+        };
+
+        const addToCartButtons = document.querySelectorAll(".product--buy");
+        addToCartButtons.forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.closest(".product.card");
+            const productName =
+              product.querySelector(".product--name").textContent;
+            const productPrice =
+              product.querySelector(".product--price").textContent;
+
+            cartItems.push({
+              name: productName,
+              price: productPrice,
+            });
+
+            displayConfirmation(productName);
+            updateCartDisplay();
+            openCartModal();
+          });
+        });
+
+        function openCartModal() {
+          modal.style.display = "block";
+          setTimeout(() => {
+            modal.classList.add("show");
+          }, 10);
+          updateCartDisplay();
+        }
+
+        function closeCartModal() {
+          modal.classList.remove("show");
+          setTimeout(() => {
+            modal.style.display = "none";
+          }, 300);
+        }
+
+        function updateCartDisplay() {
+          if (cartItems.length === 0) {
+            cartDisplay.textContent = "Your cart is empty.";
+          } else {
+            cartDisplay.innerHTML =
+              "<ul>" +
+              cartItems
+                .map((item) => `<li>${item.name} - ${item.price}</li>`)
+                .join("") +
+              "</ul>";
+          }
+        }
+
+        function displayConfirmation(productName) {
+          const confirmation = document.createElement("div");
+          confirmation.className = "confirmation-message";
+          confirmation.textContent = `${productName} has been added to the cart.`;
+          document.body.appendChild(confirmation);
+
+          setTimeout(() => {
+            confirmation.remove();
+          }, 3000);
+        }
+
+        searchInput.addEventListener("input", () => {
+          const query = searchInput.value.toLowerCase();
+          products.forEach((product) => {
+            const productName = product
+              .querySelector(".product--name")
+              .textContent.toLowerCase();
+            if (productName.includes(query)) {
+              product.style.display = "";
+            } else {
+              product.style.display = "none";
+            }
+          });
+        });
+      });
+    </script> -->
+  </body>
+</html>
