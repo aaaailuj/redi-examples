@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const addButton = document.getElementById("add-button");
   const todoList = document.getElementById("todo-list");
 
-  addButton.addEventListener("click", () => {
-    console.log("clicked");
+  addButton.addEventListener("click", (event) => {
+    console.log(event);
     const todoText = document.getElementById("textfield").value;
     const newItem = createListItem(todoText);
     todoList.appendChild(newItem);
