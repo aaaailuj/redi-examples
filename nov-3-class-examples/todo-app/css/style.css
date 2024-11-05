@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.site--bar {
+  background-color: #b0e8fc;
+  padding: 16px;
+
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50vw;
+  padding-top: 1rem;
+ 
+}
+
+.control-panel > button {
+  border: 2px solid #1095c6;
+  border-radius: 8px;
+  height: 2rem;
+  min-width: fit-content;
+  color:  #4453fc;
+  font-weight: bolder;
+  background-color: #daecf3;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #97d9fc;
+  }
+}
+#textfield {
+  margin-right: 1rem;
+}
