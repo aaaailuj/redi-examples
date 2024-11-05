@@ -2,6 +2,7 @@
 const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
+const fetchTasksButton = document.getElementById('fetchTasks')
 
 // Function to add a new task
 function addTask() {
@@ -29,8 +30,22 @@ function addTask() {
   }
 }
 
+async function fetchTasks() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos')
+  const data = await response.json()
+
+  data.forEach((task) => {
+    const listItem = document.createElement('li')
+    listItem.innerHTML = `<p> ${task.completed ? '✅' : '❌'} <strong>${task.title}</strong></p>`
+    taskList.appendChild(listItem)
+  });
+
+}
+
+
 // Event listener for the "Add Task" button
 addTaskButton.addEventListener("click", addTask);
+fetchTasksButton.addEventListener("click", fetchTasks)
 
 // Optional: Allow adding tasks by pressing "Enter"
 taskInput.addEventListener("keypress", function(event) {

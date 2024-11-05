@@ -1,8 +1,8 @@
 
 const pizzaOrder = new Promise((resolve, reject) => {
     setTimeout(() => { // Simulation of an asynchronous action
-        let everythingOk = true
-        if (everythingOk) {
+        let everythingOk = false
+        if (everythingOk === true) {
             return resolve("Pizza was delivered!")
         } else {
             return reject("Oh no, no pizza today")
@@ -10,17 +10,11 @@ const pizzaOrder = new Promise((resolve, reject) => {
     }, 3000); // waits 3 seconds
 })
 
-
-
-
-
-
-
-pizzaOrder
-.then((resolvedValue) => {
+pizzaOrder.then((resolvedValue) => {
     console.log(resolvedValue)
 })
 .catch((rejectedValue) => {
     console.log(rejectedValue)
 })
+
 console.log('I ordered a pizza!')
