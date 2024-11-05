@@ -7,8 +7,14 @@ const pizzaOrder = new Promise((resolve, reject) => {
         } else {
             return reject("Oh no, no pizza today")
         }
-    }, 3000);
+    }, 3000); // waits 3 seconds
 })
+
+
+
+
+
+
 
 pizzaOrder
 .then((resolvedValue) => {
