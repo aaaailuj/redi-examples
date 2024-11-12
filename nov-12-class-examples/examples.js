@@ -1,27 +1,29 @@
 // Declaring variables using let and const
-let greeting = "Hello, world!";
-const pi = 3.14159; // A constant value
+const someNumbers = [1,2,3]
+someNumbers = [4, 5, 6] // will give an error
 
-// Demonstrating primitive types
-let isLearning = true; // Boolean
-let age = 25; // Number
-let name = "John"; // String
 
-// Log types to the console
-console.log(typeof greeting); // "string"
-console.log(typeof pi); // "number"
-console.log(typeof isLearning); // "boolean"
+let myString
+console.log(myString) // undefined
 
-// Declaring variables using let and const
-let greeting = "Hello, world!";
-const pi = 3.14159; // A constant value
 
-// Demonstrating primitive types
-let isLearning = true; // Boolean
-let age = 25; // Number
-let name = "John"; // String
+let myArray = ["Apples", "Bananas", "Pizza", "Cake"]
 
-// Log types to the console
-console.log(typeof greeting); // "string"
-console.log(typeof pi); // "number"
-console.log(typeof isLearning); // "boolean"
+for(let i = 0; i < myArray.length; i++) {
+    console.log(`Value of i: ${i}, Array element: ${myArray[i]}`)
+}
+
+let i = 0
+while(i < 5) {
+    console.log(i)
+    i++
+}
+
+
+const dog = {
+    name: 'Fido',
+    age: 5,
+    color: 'brown'
+}
+console.log(dog.name)
+console.log(dog['age'])
